@@ -26,7 +26,6 @@ module.exports = grammar({
 
     content: $ => prec.right(repeat1(choice(/[^<]+|</, '<%%'))),
 
-
     filter: ($) =>
       seq(
         field("body", choice($.expression, $.filter)),
